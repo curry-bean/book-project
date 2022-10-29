@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://kit.fontawesome.com/76e9768b91.js"></script>
+    <style>
+        * {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mobile-width: 325px;
+  --mobile-height: 670px;
+  --mobile-radius: 25px;
+  --separator-height: 500px;
+  --bg: #fdf3f2;
+  --mobile-bg: #fdeae6;
+  --intro-bg: #eed7d1;
+  --font-color: #807b7b;
+  --transition: transform 0.7s ease-in-out;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+}
+
+.info {
+  font-family: "Quicksand", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  font-size: 26px;
+  margin-top: 10px;
+  color: var(--font-color);
+}
+
+.mobile-layout {
+  width: var(--mobile-width);
+  height: var(--mobile-height);
+  margin: 30px 0;
+  border-radius: var(--mobile-radius);
+  perspective: 500px;
+  overflow: hidden;
+  color: var(--font-color);
+  background-color: var(--mobile-bg);
+  box-shadow: 36px 36px 50px 15px #eed7d1d1;
+}
+.mobile-layout .notification-header {
+  position: fixed;
+  top: 5px;
+  width: 100%;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  z-index: 6;
+}
+.mobile-layout .actions {
+  position: fixed;
+  top: 37px;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  z-index: 6;
+}
+.mobile-layout .book-cover {
+  position: relative;
+  height: var(--separator-height);
+  width: calc(var(--mobile-width) * 2);
+  left: -52.5%;
+  border-top-left-radius: var(--mobile-radius);
+  border-top-right-radius: var(--mobile-radius);
+  background-color: var(--intro-bg);
+  transform-style: preserve-3d;
+  transform-origin: 50% 40%;
+  transition: var(--transition);
+  z-index: 4;
+}
+.mobile-layout .book-top {
+  width: 170px;
+  position: absolute;
+  top: 180px;
+  left: 250px;
+  z-index: 5;
+  transform: translateZ(28.5px);
+}
+.mobile-layout .book-side {
+  position: absolute;
+  top: 430px;
+  left: 222px;
+  transform: translateY(-15px) translateX(0px) translateZ(15px) rotateX(104deg);
+}
+.mobile-layout .book-cover:hover {
+  transform: rotateX(75deg) translateZ(3px) scale(0.75);
+}
+.mobile-layout .book-cover:hover + .preface {
+  transform: translateY(-302px);
+}
+.mobile-layout .book-cover:hover + .preface .icon {
+  transform: rotateX(180deg);
+}
+.mobile-layout .preface {
+  height: var(--separator-height);
+  padding: 50px;
+  transition: var(--transition);
+  background: white;
+}
+.mobile-layout .preface .header {
+  display: flex;
+  align-items: center;
+}
+.mobile-layout .preface .title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.mobile-layout .preface .author {
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.mobile-layout .preface .icon {
+  transform-origin: top;
+  transition: var(--transition);
+}
+.mobile-layout .preface .body {
+  font-family: "Quicksand", sans-serif;
+}
+.mobile-layout .preface .body p:first-child {
+  margin-bottom: 15px;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="info">
+      BOOK DEMO
+    </div>
+    <div class="mobile-layout">
+      <div class="notification-header">
+        <div class="time">
+          9:41
+        </div>
+        <div class="necessities">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+      <div class="actions">
+        <i class="fas fa-chevron-left"></i>
+        <i class="fas fa-bookmark"></i>
+      </div>  
+      <div class="book-cover">
+          <a href="./readerbook.html"><img class="book-top" src="./books3.jpeg" alt="book-top" /></a>
+        <img class="book-side" src="./book1.jpeg" alt="book-side" /> 
+      </div>
+      <div class="preface">
+        <div class="content">
+          <div class="header">
+            <a href="./readerbook.html"><div class="title">Makaveli`s Playbook </div></a> 
+            <div class="icon">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <a href="./readerbook.html">
+            <div class="author">by Alvin Machiaveli</div>
+          </a>
+          <a href="./readerbook.html">
+            <div class="body">
+              <p>
+              These are views that Makaveli has noticed from the society.  
+              </p>
+              <p>
+              views that you won`t be taught in school or by your parents  
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
